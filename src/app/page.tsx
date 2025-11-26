@@ -12,11 +12,11 @@ export default function Home() {
     <div>
       <Header/>
       <Hero/>
-      <HowItWorks/>
+      {/* <HowItWorks/>
       <WhatToAsk/>
       <PricingSection/>
       <CTA/>
-      <Footer/>
+      <Footer/> */}
     </div>
   );
 }
