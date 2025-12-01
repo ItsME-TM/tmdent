@@ -6,8 +6,8 @@ import { Button } from '../ui/button'
 
 function Header() {
   return (
-    <nav className="fixed top-0 right-0 left-0 z-50 px-6 py-4 border-b border-border/50 bg-background/80
-    backdrop-blur-md h-16">
+    <nav className="fixed top-0 right-0 left-0 z-50 px-6 py-2 border-b border-border/50 bg-background/80
+    backdrop-blur-md h-14">
         <div className="flex items-center justify-between max-w-6xl mx-auto">
             <Link href="/" className="flex items-center gap-2">
                 <Image src={"/logo.png"} alt="TMdent Logo" width={32} height={32} className="w-11"/>
