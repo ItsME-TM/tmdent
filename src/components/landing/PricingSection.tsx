@@ -26,7 +26,7 @@ function PricingSection() {
               Simple Pricing
             </span>
           </div>
-          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold mb-2 tracking-tight">
+          <h2 className="text-3xl md:text-3xl lg:text-5xl font-bold mb-2 tracking-tight">
             <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
               Choose your
             </span>

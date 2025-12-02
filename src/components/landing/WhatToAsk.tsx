@@ -18,7 +18,7 @@ function WhatToAsk() {
               AI-Powered Conversations
             </span>
           </div>
-          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold tracking-tight">
+          <h2 className="text-3xl md:text-3xl lg:text-5xl font-bold tracking-tight">
             <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
               Ask about
             </span>

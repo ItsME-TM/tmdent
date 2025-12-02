@@ -25,7 +25,7 @@ function HowItWorks() {
         </div>
         {/* Title and description */}
         <h2
-          className="text-xl md:text-3xl lg:text-5xl font-bold
+          className="text-3xl md:text-3xl lg:text-5xl font-bold
         mb-2 tracking-light text-center"
         >
           <span
