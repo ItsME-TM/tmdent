@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function WhatToAsk() {
   return (
-    <section className="relative py-2 px-6 overflow-hidden bg-gradient-to-b from-background to-muted/20">
+    <section className="relative py-14 px-6 overflow-hidden bg-gradient-to-b from-background to-muted/20">
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
