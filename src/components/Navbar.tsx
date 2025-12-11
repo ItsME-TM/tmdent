@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 import { UserButton, useUser } from "@clerk/nextjs";
