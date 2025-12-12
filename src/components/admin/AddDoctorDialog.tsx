@@ -38,7 +38,7 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
 
   const createDoctorMutation = useCreateDoctor();
 
-  const handlePhoneChage = (value: string) => {
+  const handlePhoneChange = (value: string) => {
     const formatedNumber = formatPhoneNumber(value);
     setNewDoctor({ ...newDoctor, phone: formatedNumber });
   };
@@ -109,7 +109,7 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
             <Input
               id="new-phone"
               value={newDoctor.phone}
-              onChange={(e) => handlePhoneChage(e.target.value)}
+              onChange={(e) => handlePhoneChange(e.target.value)}
               placeholder="071345678"
             />
           </div>
