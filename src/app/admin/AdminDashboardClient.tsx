@@ -7,6 +7,7 @@ import { Settings } from "lucide-react";
 import { useGetAppointments } from "@/components/hooks/ues-appointment";
 import AdminStats from "@/components/admin/AdminStats";
 import DoctorsManagement from "@/components/admin/DoctorsManagement";
+import LoadingUI from "@/components/LoadingUI";
 
  
 function AdminDashboardClient() {
@@ -22,7 +23,7 @@ function AdminDashboardClient() {
     completedAppointments: appointments.filter((app) =>  app.status === "COMPLETED").length,
   };
 
-  if (doctorLoading || appointmentsLoading) return <div>Loading...</div>;
+  if (doctorLoading || appointmentsLoading) return <LoadingUI/>;
 
   return (
     <div className="min-h-screen bg-background">
