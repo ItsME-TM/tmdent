@@ -12,14 +12,24 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import AddDoctorDialog from "./AddDoctorDialog";
+import EditDoctorDialog from "./EditDoctorDialog";
+import { Doctor } from "@/prisma/client";
 
 function DoctorsManagement() {
   const { data: doctors = [] } = useGetDoctors();
   const [isAddDialogOpen, setIsAddDialogOpen] = React.useState(false);
   const [isEditDialogOpen, setIsEditDialogOpen] = React.useState(false);
-  const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
 
-  const handleEditDoctor = () => {};
+  const handleEditDoctor = (doctor: Doctor) => {
+    setSelectedDoctor(doctor);
+    setIsEditDialogOpen(true);
+  };
+
+  const handleCloseEditDialog = () => {
+    setIsEditDialogOpen(false);
+    setSelectedDoctor(null);
+  }
 
   return (
     <>
@@ -97,7 +107,7 @@ function DoctorsManagement() {
                     size="sm"
                     variant="outline"
                     className="h-8 px-3"
-                    onClick={() => handleEditDoctor()}
+                    onClick={() => handleEditDoctor(doctor)}
                   >
                     <Edit className="size-4 mr-1" />
                     Edit
@@ -112,6 +122,13 @@ function DoctorsManagement() {
       <AddDoctorDialog
         isOpen={isAddDialogOpen}
         onClose={() => setIsAddDialogOpen(false)}
+      />
+
+      <EditDoctorDialog
+        isOpen={isEditDialogOpen}
+        onClose={handleCloseEditDialog}
+        doctor={selectedDoctor}
+        key={selectedDoctor?.id}
       />
     </>
   );

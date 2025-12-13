@@ -58,3 +58,46 @@ export async function createDoctor(input: createDoctorInput) {
   }
 }
 
+interface UpdateDoctorInput extends Partial<createDoctorInput>{
+  id: string;
+}
+
+
+export async function updateDoctor(input: UpdateDoctorInput){
+  try{
+    if(!input.name || !input.email) throw new Error("Name and Email are required");
+
+    const currentDoctor = await prisma.doctor.findUnique({
+      where: {id: input.id},
+      select: {email: true},
+    })
+
+    if(!currentDoctor) throw new Error("Doctor not found");
+    //if email is being updated, check for uniqueness
+    if(input.email !== currentDoctor.email){
+      const existingDoctor = await prisma.doctor.findUnique({
+        where: {email: input.email},
+      });
+      if(existingDoctor){
+        throw new Error("A doctor with this email already exists");
+      }
+    }
+
+    const doctor = await prisma.doctor.update({
+      where: {id: input.id},
+      data: {
+        name: input.name,
+        email: input.email,
+        phone: input.phone,
+        speciality: input.speciality,
+        gender: input.gender,
+        isActive: input.isActive
+      },
+    });
+    return doctor;
+
+  }catch(error){
+    console.error("Error updating doctor:", error);
+    throw new Error("Failed to update doctor");
+  }
+}
