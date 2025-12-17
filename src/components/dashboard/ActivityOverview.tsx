@@ -4,7 +4,7 @@ import NextAppointment from "./NextAppointment";
 
 function ActivityOverview() {
   return (
-    <div>
+    <div className="grid lg:grid-cols-3 gap-6">
       <DentalHealthOverview />
       <NextAppointment />
     </div>
