@@ -30,7 +30,7 @@ export async function getAppointments() {
   }
 }
 
-export async function getUserAppoinmentStats(){
+export async function getUserAppointmentStats(){
   try{
     const {userId} = await auth();
     if(!userId) throw new Error("Please login to view your appointment stats.");

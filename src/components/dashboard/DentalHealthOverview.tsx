@@ -4,7 +4,7 @@ import { currentUser } from '@clerk/nextjs/server';
 import React from 'react'
 
 async function DentalHealthOverview() {
-    const appointmentStatus = await getUserAppoinmentStats();
+    const appointmentStatus = await getUserAppointmentStats();
     const user = currentUser();
     
   return (
