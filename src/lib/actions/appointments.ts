@@ -71,7 +71,7 @@ export async function getUserAppointments() {
   try {
     const { userId } = await auth();
     if (!userId)
-      throw new Error("Please login and view your appointment stats.");
+      throw new Error("Please login and view your appointments.");
 
     const user = await prisma.user.findUnique({ where: { clerkId: userId } });
 

@@ -22,7 +22,7 @@ async function NextAppointment() {
   if(!nextAppointment) return <NoNextAppointments/>;
 
   const appointmentDate = parseISO(nextAppointment.date);
-  const formattedDate = format(appointmentDate, "EEEE, MMMM, d, yyyy");
+  const formattedDate = format(appointmentDate, "EEEE, MMMM d, yyyy");
   const isToday = isSameDay(appointmentDate, new Date());
 
 return (
