@@ -43,7 +43,7 @@ export async function createDoctor(input: createDoctorInput) {
       data: {
         ...input,
         bio: input.bio ?? "",
-        imageUrl: generateAvatar(input.name, input.gender),
+        imageUrl: generateAvatar(input.name),
       },
     });
     //here we get rid of the cache for the doctors list page and force it to fetch fresh data
@@ -91,7 +91,8 @@ export async function updateDoctor(input: UpdateDoctorInput){
         phone: input.phone,
         speciality: input.speciality,
         gender: input.gender,
-        isActive: input.isActive
+        isActive: input.isActive,
+        imageUrl: generateAvatar(input.name),
       },
     });
     return doctor;
@@ -101,3 +102,4 @@ export async function updateDoctor(input: UpdateDoctorInput){
     throw new Error("Failed to update doctor");
   }
 }
+
