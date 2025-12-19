@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import React, { useState } from "react";
 
 function page() {
-  const [selctedDentistId, setSelectedDentistId] = useState<string | null>(
+  const [selectedDentisId, setSelectedDentistId] = useState<string | null>(
     null
   );
   const [selectedDate, setSelectedDate] = useState("");
@@ -45,7 +45,7 @@ function page() {
 
         {currentStep === 1 && (
             <DoctorSelectionStep
-                selectedDentisId={setSelectedDentistId}
+                selectedDentisId={selectedDentisId}
                 onContinue={() => setCurrentStep(2)}
                 onSelectDentist={handleSelectDentist}
             />
