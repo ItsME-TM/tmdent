@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import React, { useState } from "react";
 
 function page() {
-  const [selectedDentisId, setSelectedDentistId] = useState<string | null>(
+  const [selectedDentistId, setSelectedDentistId] = useState<string | null>(
     null
   );
   const [selectedDate, setSelectedDate] = useState("");
@@ -25,17 +25,16 @@ function page() {
   };
 
   const handleBookAppointment = async () => {};
-
   return (
     <>
       <Navbar />
       <div className="max-w-7xl mx-auto px-6 py-8 pt-20">
         {/* header */}
         <div className="mb-4">
-            <h1 className="text-xl font-bold mb-2">
+            <h1 className="text-3xl font-bold mb-2">
                 Book an Appointment
             </h1>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-sm mb-4">
                 Find and book with verified dentist in your area
             </p>
         </div>
@@ -45,7 +44,7 @@ function page() {
 
         {currentStep === 1 && (
             <DoctorSelectionStep
-                selectedDentisId={selectedDentisId}
+                selectedDentistId={selectedDentistId}
                 onContinue={() => setCurrentStep(2)}
                 onSelectDentist={handleSelectDentist}
             />
