@@ -1,6 +1,5 @@
 import React from "react";
 import { useAvailableDoctors } from "../hooks/use-doctors";
-import LoadingUI from "../LoadingUI";
 import {
   Card,
   CardContent,
@@ -12,6 +11,7 @@ import Image from "next/image";
 import { MapPin, Phone, Star } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
+import { DoctorCardsLoading } from "./DoctorCardLoading";
 
 interface DoctorSelectionStepProps {
   selectedDentistId: string | null;
@@ -26,7 +26,12 @@ function DoctorSelectionStep({
 }: DoctorSelectionStepProps) {
   const { data: dentists = [], isLoading } = useAvailableDoctors();
 
-  if (isLoading) return <LoadingUI />;
+  if (isLoading) return (
+    <div className="space-y-4">
+      <h2 className="text-lg font-semibold">Choose Your Dentist</h2>
+      <DoctorCardsLoading/>
+    </div>
+  );
 
   return (
     <div className="space-y-4">
