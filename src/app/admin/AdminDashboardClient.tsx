@@ -4,7 +4,7 @@ import { useGetDoctors } from "@/components/hooks/use-doctors";
 import Navbar from "@/components/Navbar";
 import { useUser } from "@clerk/nextjs";
 import { Settings } from "lucide-react";
-import { useGetAppointments } from "@/components/hooks/ues-appointment";
+import { useGetAppointments } from "@/components/hooks/use-appointment";
 import AdminStats from "@/components/admin/AdminStats";
 import DoctorsManagement from "@/components/admin/DoctorsManagement";
 import LoadingUI from "@/components/LoadingUI";
