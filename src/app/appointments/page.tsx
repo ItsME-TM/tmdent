@@ -131,7 +131,7 @@ function page() {
         )}
       </div>
       {/* shows user's existing appointments */}
-      {(userAppointmentsLoading || userAppointments.length > 0) && (
+      {(currentStep === 1) && (userAppointmentsLoading || userAppointments.length > 0) && (
         <UsersUpcommingAppointments
           userAppointments={userAppointments}
           userAppointmentsLoading={userAppointmentsLoading}
