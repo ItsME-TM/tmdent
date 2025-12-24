@@ -8,6 +8,7 @@ import { useGetAppointments } from "@/components/hooks/use-appointment";
 import AdminStats from "@/components/admin/AdminStats";
 import DoctorsManagement from "@/components/admin/DoctorsManagement";
 import LoadingUI from "@/components/LoadingUI";
+import RecentAppointments from "@/components/admin/RecentAppointments";
 
  
 function AdminDashboardClient() {
@@ -60,6 +61,7 @@ function AdminDashboardClient() {
         />
 
         <DoctorsManagement />
+        <RecentAppointments/>
       </div>
     </div>
   )
