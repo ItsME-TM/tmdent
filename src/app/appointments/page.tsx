@@ -1,4 +1,5 @@
 "use client";
+import { AppointmentConfirmationModal } from "@/components/appointments/AppointmentConfirmationModel";
 import BookingConfirmationStep from "@/components/appointments/BookingConfirmationStep";
 import DoctorSelectionStep from "@/components/appointments/DoctorSelectionStep";
 import ProgressSteps from "@/components/appointments/ProgressSteps";
@@ -22,7 +23,7 @@ function page() {
   const [selectedTime, setSelectedTime] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [currentStep, setCurrentStep] = useState(1);
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [bookAppointmentError, setBookAppointmentError] = useState<any>(null);
   const [bookedAppointment, setBookedAppointment] = useState<any>(null);
   const bookAppointmentMutation = useBookAppointment();
@@ -66,7 +67,30 @@ function page() {
         onSuccess: async (appointment) => {
           setBookedAppointment(appointment);
 
-          setShowConfirmation(true);
+          //send email confirmation
+          try{
+            const emailResponse = await fetch("/api/send-appointment-email", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                userEmail: appointment.patientEmail,
+                doctorName: appointment.doctorName,
+                appointmentDate: format( new Date(appointment.date), "EEEE, MMMM d, yyyy"),
+                appointmentTime: appointment.time,
+                appointmentType: appointmentType?.name,
+                duration: appointmentType?.duration,
+                price: appointmentType?.price,
+              }),
+            });
+            if(!emailResponse.ok) console.error("Failed to send confirmation email");
+          }catch(error){
+            console.error("Failed to send appointment confirmation email:", error);
+            throw error;
+          }
+
+          setShowConfirmationModal(true);
 
           setSelectedDentistId(null);
           setSelectedDate("");
@@ -130,6 +154,20 @@ function page() {
           />
         )}
       </div>
+
+      {bookedAppointment && (
+        <AppointmentConfirmationModal
+          open={showConfirmationModal}
+          onOpenChange={setShowConfirmationModal}
+          appointmentDetails={{
+            doctorName: bookedAppointment.doctorName,
+            appointmentDate: format(new Date(bookedAppointment.date), "EEEE, MMMM d, yyyy"),
+            appointmentTime: bookedAppointment.time,
+            userEmail: bookedAppointment.patientEmail,
+          }}
+        />
+      )}        
+
       {/* shows user's existing appointments */}
       {(currentStep === 1) && (userAppointmentsLoading || userAppointments.length > 0) && (
         <UsersUpcommingAppointments
