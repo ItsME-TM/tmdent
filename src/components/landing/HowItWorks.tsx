@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 function HowItWorks() {
   return (
     <section
+      id="how-it-works"
       className="relative py-14 px-6 outline-hidden 
     z-10 max-w-7xl mx-auto"
     >
