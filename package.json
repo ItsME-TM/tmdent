@@ -12,7 +12,7 @@
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.35.5",
+    "@clerk/nextjs": "^6.36.5",
     "@hookform/resolvers": "^5.2.2",
     "@prisma/adapter-pg": "^7.1.0",
     "@prisma/client": "^7.1.0",
