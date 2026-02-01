@@ -29,7 +29,7 @@ function AdminDashboardClient() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar/>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-8 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 lg:mt-10 sm:py-8 pt-20">
         {/* Admin welcome */}
         <div className="mb-4 flex items-center justify-between bg-linear-to-br from-primary/10 via-primary/5 to-background rounded-3xl p-4 sm:p-5 border border-primary/20">
           <div className="space-y-2">
