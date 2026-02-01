@@ -8,7 +8,7 @@ export default async function WelcomeSection() {
   return (
     <div
       className="relative z-10 flex items-center justify-between bg-gradient-to-br 
-    from-primary/10 via-primary/5 to-background rounded-3xl p-6 border border-primary/20 mb-4 overflow-hidden"
+    from-primary/10 via-primary/5 to-background rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-primary/20 mb-4 overflow-hidden"
     >
       <div className="space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">

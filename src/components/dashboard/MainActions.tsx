@@ -6,24 +6,24 @@ import Link from "next/link";
 
 export default function MainActions() {
   return (
-    <div className="grid md:grid-cols-2 gap-8 mb-6">
+    <div className="grid md:grid-cols-2 gap-4 sm:gap-8 mb-6">
       {/* AI Voice Assistant */}
       <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <CardContent className="relative p-8">
+        <CardContent className="relative p-5 sm:p-8">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <Image
                 src="/audio.png"
                 alt="Voice AI"
                 width={32}
                 height={32}
-                className="w-10"
+                className="w-8 sm:w-10"
               />
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-2">AI Voice Assistant</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">AI Voice Assistant</h3>
+              <p className="text-muted-foreground text-sm sm:text-base">
                 Get instant dental advice through voice calls
               </p>
             </div>
@@ -61,20 +61,20 @@ export default function MainActions() {
       {/* Book Appointment */}
       <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <CardContent className="relative p-8">
+        <CardContent className="relative p-5 sm:p-8">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <Image
                 src="/calendar.png"
                 alt="Calendar"
                 width={32}
                 height={32}
-                className="w-10"
+                className="w-8 sm:w-10"
               />
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-2">Book Appointment</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">Book Appointment</h3>
+              <p className="text-muted-foreground text-sm sm:text-base">
                 Schedule with verified dentists in your area
               </p>
             </div>

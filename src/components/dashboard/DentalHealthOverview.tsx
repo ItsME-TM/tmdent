@@ -18,8 +18,8 @@ async function DentalHealthOverview() {
   const user = await currentUser();
 
   return (
-    <Card className="lg:col-span-2">
-      <CardHeader>
+    <Card className="lg:col-span-2 py-4 sm:py-6">
+      <CardHeader className="px-4 sm:px-6">
         <CardTitle className="flex items-center gap-2">
           <BrainIcon className="size-5 text-primary" />
           Your Dental Health
@@ -28,8 +28,8 @@ async function DentalHealthOverview() {
           Keep track of your dental care journey
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="grid md:grid-cols-3 gap-6">
+      <CardContent className="px-4 sm:px-6">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
           <div className="text-center p-4 bg-muted/30 rounded-xl">
             <div className="text-2xl font-bold text-primary mb-1">
               {appointmentStats.completedCount}
@@ -67,7 +67,7 @@ async function DentalHealthOverview() {
                 Book your first appointment or try our AI voice assistant for
                 instant dental advice.
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Link href="/voice">
                   <Button size="sm" className="bg-primary hover:bg-primary/90">
                     Try AI Assistant
