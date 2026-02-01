@@ -57,7 +57,7 @@ function RecentAppointments() {
           </Badge>
         );
     }
-    return <Badge className="secondary">{status}</Badge>;
+    return <Badge variant="secondary">{status}</Badge>;
   };
 
   return (
@@ -73,7 +73,7 @@ function RecentAppointments() {
       </CardHeader>
 
       <CardContent>
-        <div className="rounded-lg border">
+        <div className="rounded-lg border overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow>
@@ -90,7 +90,7 @@ function RecentAppointments() {
               {appointments.map((appointment) => (
                 <TableRow key={appointment.id}>
                   <TableCell>
-                    <div>
+                    <div className="min-w-[150px]">
                       <div className="font-medium">
                         {appointment.patientName}
                       </div>
@@ -99,11 +99,11 @@ function RecentAppointments() {
                       </div>
                     </div>
                   </TableCell>
-                  <TableCell className="font-medium">
+                  <TableCell className="font-medium min-w-[120px]">
                     {appointment.doctorName}
                   </TableCell>
                   <TableCell>
-                    <div>
+                    <div className="min-w-[120px]">
                       <div className="font-medium">
                         {new Date(appointment.date).toLocaleDateString()}
                       </div>
@@ -112,7 +112,7 @@ function RecentAppointments() {
                       </div>
                     </div>
                   </TableCell>
-                  <TableCell>{appointment.reason}</TableCell>
+                  <TableCell className="min-w-[150px]">{appointment.reason}</TableCell>
                   <TableCell>
                     <Button
                       variant="ghost"
@@ -126,7 +126,7 @@ function RecentAppointments() {
                     </Button>
                   </TableCell>
                   <TableCell className="text-right">
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-xs text-muted-foreground whitespace-nowrap">
                       Click status to toggle
                     </div>
                   </TableCell>
