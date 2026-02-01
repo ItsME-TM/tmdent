@@ -29,9 +29,9 @@ function AdminDashboardClient() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar/>
-      <div className="max-w-7xl mx-auto px-6 py-1 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 lg:mt-10 sm:py-8 pt-20">
         {/* Admin welcome */}
-        <div className="mb-4 flex items-center justify-between bg-gradient-to-br from-primary/10 via-primary/5 to-background rounded-3xl p-5 border border-primary/20">
+        <div className="mb-4 flex items-center justify-between bg-linear-to-br from-primary/10 via-primary/5 to-background rounded-3xl p-4 sm:p-5 border border-primary/20">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
@@ -48,7 +48,7 @@ function AdminDashboardClient() {
           </div>
 
           <div className="hidden lg:block">
-            <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center">
+            <div className="w-20 h-20 bg-linear-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center">
               <Settings className="w-10 h-10 text-primary" />
             </div>
           </div>

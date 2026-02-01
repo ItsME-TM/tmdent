@@ -15,11 +15,11 @@ function AdminStats({
   totalAppointments,
 }: AdminStatsProps) {
   return (
-    <div className="grid md:grid-cols-4 gap-4 mb-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4">
       <Card className="border-2 hover:border-primary/30 transition-all duration-300">
         <CardContent className="p-4">
-          <div className="flex items-center gap-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-8 h-8 bg-linear-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
               <Users className="size-4" />
             </div>
             <div>
@@ -32,8 +32,8 @@ function AdminStats({
 
       <Card className="border-2 hover:border-primary/30 transition-all duration-300">
         <CardContent className="p-4">
-          <div className="flex items-center gap-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-8 h-8 bg-linear-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
               <UserCheck className="size-4" />
             </div>
             <div>
@@ -48,8 +48,8 @@ function AdminStats({
 
       <Card className="border-2 hover:border-primary/30 transition-all duration-300">
         <CardContent className="p-4">
-          <div className="flex items-center gap-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-8 h-8 bg-linear-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
               <Calendar className="size-4" />
             </div>
             <div>
@@ -64,8 +64,8 @@ function AdminStats({
 
       <Card className="border-2 hover:border-primary/30 transition-all duration-300">
         <CardContent className="p-4">
-          <div className="flex items-center gap-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-8 h-8 bg-linear-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
               <Clock className="size-4" />
             </div>
             <div>

@@ -44,7 +44,7 @@ function DoctorsManagement() {
           </div>
           <Button
             onClick={() => setIsAddDialogOpen(true)}
-            className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90
+            className="bg-linear-to-r from-primary to-primary/80 hover:from-primary/90
                     hover:to-primary"
           >
             <Plus className="mr-2 size-4" />
@@ -56,62 +56,63 @@ function DoctorsManagement() {
             {doctors.map((doctor) => (
               <div
                 key={doctor.id}
-                className="flex items-center justify-between p-4 bg-muted/30 rounded-xl
-                            border border-border/50"
+                className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-muted/30 rounded-xl
+                            border border-border/50 gap-4 sm:gap-0"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 w-full sm:w-auto">
                   <Image
                     src={doctor.imageUrl}
                     alt={doctor.name}
                     width={50}
                     height={50}
-                    className="size-12 rounded-full object-cover ring-2 ring-background"
+                    className="size-12 rounded-full object-cover ring-2 ring-background shrink-0"
                   />
-                  <div>
-                    <div className="font-semibold">{doctor.name}</div>
-                    <div className="text-sm text-muted-foreground">
-                      {doctor.speciality}
-                      <span className="ml-2 px-2 py-0.5 bg-muted rounded text-xs">
-                        {doctor.gender === "MALE" ? "Male" : "Female"}
-                      </span>
+                  <div className="min-w-0">
+                    <div className="font-semibold truncate">{doctor.name}</div>
+                    <div className="text-sm text-muted-foreground flex items-center flex-wrap gap-1">
+                      <span className="truncate">{doctor.speciality}</span>
+                      <span className="hidden sm:inline">•</span>
+                      <span className="px-2 py-0.5 bg-muted rounded text-xs shrink-0">{doctor.gender === "MALE" ? "Male" : "Female"}</span>
                     </div>
-                    <div className="flex items-center gap-4 mt-1">
-                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <Mail className="h-3 w-3" />
-                        {doctor.email}
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-1">
+                      <div className="flex items-center gap-1 text-xs text-muted-foreground truncate">
+                        <Mail className="h-3 w-3 shrink-0" />
+                        <span className="truncate max-w-[120px] sm:max-w-none">{doctor.email}</span>
                       </div>
-                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <Phone className="h-3 w-3" />
+                      <div className="flex items-center gap-1 text-xs text-muted-foreground shrink-0">
+                        <Phone className="h-3 w-3 shrink-0" />
                         {doctor.phone}
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="text-center">
+                <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-border/50 mt-2 sm:mt-0">
+                  <div className="text-center sm:text-right pr-4 border-r border-border/50 sm:border-none sm:pr-0">
                     <div className="font-semibold text-primary">
                       {doctor.appointmentCount}
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      Appointments
+                      Visits
                     </div>
                   </div>
+                  <div className="flex items-center gap-3">
                   {doctor.isActive ? (
-                    <Badge className="bg-green-100 text-green-800 hover:bg-green-100">
+                    <Badge className="bg-green-100 text-green-800 hover:bg-green-100 shrink-0">
                       Active
                     </Badge>
                   ) : (
-                    <Badge variant="secondary">Inactive</Badge>
+                    <Badge variant="secondary" className="shrink-0">Inactive</Badge>
                   )}
                   <Button
                     size="sm"
                     variant="outline"
-                    className="h-8 px-3"
+                    className="h-8 px-3 shrink-0"
                     onClick={() => handleEditDoctor(doctor)}
                   >
                     <Edit className="size-4 mr-1" />
                     Edit
                   </Button>
+                  </div>
                 </div>
               </div>
             ))}

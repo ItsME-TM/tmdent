@@ -35,7 +35,7 @@ function BookingConfirmationStep({
           <ChevronLeftIcon className="w-4 h-4 mr-2" />
           Back
         </Button>
-        <h2 className="text-2xl font-semibold">Confirm Your Appointment</h2>
+        <h2 className="sm:text-2xl text-lg font-semibold">Confirm Your Appointment</h2>
       </div>
 
       <Card className="max-w-2xl">
